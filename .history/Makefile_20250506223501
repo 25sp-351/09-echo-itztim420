@@ -1,0 +1,14 @@
+# Makefile for multi-threaded TCP echo server
+
+CC = gcc
+CFLAGS = -Wall -pthread
+TARGET = server
+SRC = server.c
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+
+clean:
+	rm -f $(TARGET)
